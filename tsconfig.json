@@ -3,7 +3,7 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowJs": false /* Allow javascript files to be compiled. */,
+    "allowJs": true /* Allow javascript files to be compiled. */,
     "checkJs": false /* Report errors in .js files. */,
     "incremental": false /* 增量编译 提高编译速度*/,
     //    "tsBuildInfoFile": "./buildFile",     // 增量编译文件的存储位置
