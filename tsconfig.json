@@ -1,0 +1,36 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": false /* Allow javascript files to be compiled. */,
+    "checkJs": false /* Report errors in .js files. */,
+    "incremental": false /* 增量编译 提高编译速度*/,
+    //    "tsBuildInfoFile": "./buildFile",     // 增量编译文件的存储位置
+    //    "diagnostics": true,                  // 打印编译信息
+    "target": "ES2020" /* 编译目标ES版本*/,
+    "module": "commonjs",
+//    "module": "commonjs" /* 编译目标模块系统*/,
+    //    "lib": [],                             /* 编译过程中需要引入的库文件列表*/
+    //"declaration": true,                      /* 编译时创建声明文件 */
+    "outDir": "dist" /* ts编译输出目录 */,
+    "sourceMap": true /* ts编译代码与源码映射 */,
+    "rootDir": "src" /* ts编译根目录. */,
+    // "importHelpers": true,                 /* 从tslib导入辅助工具函数(如__importDefault)*/
+    "strict": false /* 严格模式开关 等价于noImplicitAny、strictNullChecks、strictFunctionTypes、strictBindCallApply等设置true */,
+    "noUnusedLocals": false /* 未使用局部变量报错*/,
+    "noUnusedParameters": false /* 未使用参数报错*/,
+    "noImplicitReturns": false /* 有代码路径没有返回值时报错*/,
+    "noFallthroughCasesInSwitch": true /* 不允许switch的case语句贯穿*/,
+    "moduleResolution": "node" /* 模块解析策略 */,
+    "typeRoots": [
+      /* 要包含的类型声明文件路径列表*/ "./typings",
+      "./node_modules/@types"
+    ],
+    "allowSyntheticDefaultImports": false /* 允许从没有设置默认导出的模块中默认导入，仅用于提示，不影响编译结果*/,
+    "esModuleInterop": false /* 允许编译生成文件时，在代码中注入工具类(__importDefault、__importStar)对ESM与commonjs混用情况做兼容处理*/,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
+}
