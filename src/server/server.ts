@@ -1,9 +1,8 @@
-import { log } from '../util/logM';
-
 const http = require('http');
 const ERRORCODE = require('../const/error');
 const server = http.createServer((req, res) => {
   let buffer;
+  const { log } = require('../util/Log');
   req.on('data', function (chunk) {
     if (!buffer) {
       buffer = Buffer.from(chunk);
@@ -67,15 +66,13 @@ const allMethods = {};
 // now that proxy is running
 let started = false;
 function register(name, func, desc) {
+  const { log } = require('../util/Log');
   if (started) {
-    //todo;
     return;
   }
 
   const method = allMethods[name];
   if (!method) {
-    // eslint-disable-next-line no-console
-    console.info('add ' + name);
     log.info('add ' + name);
     allMethods[name] = {
       name,
@@ -110,6 +107,7 @@ async function __internalList__() {
 }
 
 function start(options) {
+  const { log } = require('../util/Log');
   if (started) {
     return;
   }

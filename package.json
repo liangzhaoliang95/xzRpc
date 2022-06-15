@@ -1,6 +1,6 @@
 {
   "name": "xzrpc",
-  "version": "1.1.3",
+  "version": "1.1.7",
   "description": "",
   "main": "dist/index.js",
   "directories": {
@@ -34,5 +34,6 @@
     "typescript": "^4.0.2"
   },
   "author": "xiaozao",
+  "email": "liangzhaoliang95@163.com",
   "license": "ISC"
 }

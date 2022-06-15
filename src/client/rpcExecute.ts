@@ -1,9 +1,9 @@
-import { log } from '../util/logM';
 import { httpRequestExecute } from './simpleExecute';
 
 const ERRORCODE = require('../const/error');
 
 async function rpcExecute(options, params) {
+  const { log } = require('../util/Log');
   // eslint-disable-next-line prefer-rest-params
   const result = await httpRequestExecute(options, [].slice.call(arguments, 1));
   switch (result.c) {

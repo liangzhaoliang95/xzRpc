@@ -60,3 +60,4 @@ test
 api.yaml
 .scannerwork
 src/config/prodconfig
+test*
