@@ -1,16 +1,19 @@
-const logger = {
+import { RpcLogger } from '../../types/logger';
+
+const logger: RpcLogger = {
   debug: console.debug,
   info: console.info,
   error: console.error,
   warn: console.warn
 };
-
-class LogM {
-  private logger: any = logger;
+class Logger {
+  private logger: RpcLogger = logger;
   private logSetAble = true;
-  setLog(log) {
+  private static instance: Logger;
+
+  setLog(logger: RpcLogger) {
     if (this.logSetAble) {
-      this.logger = log;
+      this.logger = logger;
       this.logSetAble = false;
     } else {
       console.info('logger can only set at very beginning');
@@ -20,12 +23,15 @@ class LogM {
   getLog() {
     return this.logger;
   }
+  static getInstance() {
+    return this.instance || (this.instance = new Logger());
+  }
 }
-const logM = new LogM();
-export function setLog(logger) {
-  logM.setLog(logger);
+
+export function setRpcLog(logger: RpcLogger) {
+  Logger.getInstance().setLog(logger);
 }
 
 export function getLog() {
-  return logM.getLog();
+  return Logger.getInstance().getLog();
 }
